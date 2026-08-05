@@ -6,9 +6,15 @@
 export const HERO_IMAGE = "/products/hero.jpg";
 
 export const PRODUCT_IMAGES = {
-  relojAzul: "/products/relojes/reloj-azul.jpg",
-  relojOro: "/products/relojes/reloj-oro.jpg",
-  joya1: "/products/joyas/photo_2026-08-05_14-27-33.jpg",
+  reloj1: "/products/relojes/photo_2026-08-05_16-15-11.jpg",
+  reloj2: "/products/relojes/photo_2026-08-05_16-15-12.jpg",
+  reloj3: "/products/relojes/photo_2026-08-05_16-15-14.jpg",
+  reloj4: "/products/relojes/photo_2026-08-05_16-15-15.jpg",
+  reloj5: "/products/relojes/photo_2026-08-05_16-15-17.jpg",
+  reloj6: "/products/relojes/photo_2026-08-05_16-15-18.jpg",
+  reloj7: "/products/relojes/photo_2026-08-05_16-15-19.jpg",
+  reloj8: "/products/relojes/photo_2026-08-05_16-15-21.jpg",
+  reloj9: "/products/relojes/photo_2026-08-05_16-15-22.jpg",
   joya2: "/products/joyas/photo_2026-08-05_14-27-36.jpg",
   joya3: "/products/joyas/photo_2026-08-05_14-27-38.jpg",
   joya4: "/products/joyas/photo_2026-08-05_14-27-39.jpg",

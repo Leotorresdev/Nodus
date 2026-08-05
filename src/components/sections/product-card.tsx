@@ -8,7 +8,7 @@ import { WHATSAPP_NUMBER } from "@/lib/site";
 
 export function ProductCard({ product }: { product: Product }) {
   const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola NODUS, quiero comprar el producto ${product.name} (${product.price}).`
+    `Hola NODUS, quiero comprar el producto ${product.name}${product.price ? ` (${product.price})` : ''}.`
   )}`;
 
   return (
@@ -42,18 +42,26 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="flex items-start justify-between gap-3 p-5">
-        <div className="min-w-0">
-          <h3 className="truncate text-base font-medium text-foreground">
+        <div className="min-w-0 flex-1">
+          <h3 className="truncate text-lg font-medium text-foreground tracking-wide">
             {product.name}
           </h3>
-          <p className="mt-1 truncate text-xs text-muted-foreground">
-            {product.detail}
-          </p>
+          {product.variants && product.variants.length > 0 && (
+            <div className="mt-2.5 flex flex-col gap-1.5">
+              {product.variants.map((variant, i) => (
+                <span key={i} className="text-gold-gradient text-sm font-medium tracking-wide">
+                  {variant}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex flex-col items-end shrink-0 justify-center">
-          <span className="text-gold-gradient text-lg font-semibold">
-            {product.price}
-          </span>
+          {product.price && (
+            <span className="text-gold-gradient text-lg font-semibold">
+              {product.price}
+            </span>
+          )}
         </div>
       </div>
     </motion.article>

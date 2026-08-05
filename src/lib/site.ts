@@ -2,7 +2,7 @@
  * Site-wide constants for the NODUS landing.
  * Update these to retarget the brand, the WhatsApp line or the Instagram handle.
  */
-export const WHATSAPP_NUMBER = "584120000000";
+export const WHATSAPP_NUMBER = "584149712020";
 
 export const WHATSAPP_MESSAGE =
   "Hola NODUS, me interesa recibir asesoría sobre sus relojes y joyas.";
@@ -11,7 +11,7 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
   WHATSAPP_MESSAGE,
 )}`;
 
-export const INSTAGRAM_URL = "https://instagram.com/nodusbrand";
+export const INSTAGRAM_URL = "https://www.instagram.com/nodusbrand_?igsh=Mm9jMnBsZ3R4dGY5";
 
 export const SITE = {
   name: "NODUS",
