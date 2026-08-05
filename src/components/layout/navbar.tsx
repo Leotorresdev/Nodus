@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/brand-icons";
@@ -32,9 +33,15 @@ export function Navbar() {
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:grid-cols-3">
         <a href="#inicio" className="flex min-w-0 items-center gap-3">
-          <span className="bg-gold-gradient grid h-10 w-10 shrink-0 place-items-center rounded-full font-display text-sm font-semibold text-primary-foreground">
-            N
-          </span>
+          <div className="relative h-10 w-12 shrink-0">
+            <Image
+              src="/products/logo.jpg"
+              alt="Nodus Logo"
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
           <span className="font-display truncate text-lg tracking-[0.35em] text-foreground">
             NODUS
           </span>

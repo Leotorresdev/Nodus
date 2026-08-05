@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/brand-icons";
 import { INSTAGRAM_URL, WHATSAPP_URL, SITE } from "@/lib/site";
@@ -6,7 +7,6 @@ const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Catálogo", href: "#catalogo" },
   { label: "Contacto", href: "#contacto" },
-  { label: "Política de privacidad", href: "#contacto" },
 ] as const;
 
 export function Footer() {
@@ -15,9 +15,14 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="bg-gold-gradient grid h-9 w-9 place-items-center rounded-full font-display text-sm font-semibold text-primary-foreground">
-              N
-            </span>
+            <div className="relative h-10 w-12 shrink-0">
+              <Image
+                src="/products/logo.jpg"
+                alt="Nodus Logo"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
             <span className="font-display text-base tracking-[0.35em]">{SITE.name}</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">

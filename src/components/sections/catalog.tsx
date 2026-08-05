@@ -15,16 +15,45 @@ const tabs: { id: Filter; label: string }[] = [
 
 export function Catalog() {
   const [filter, setFilter] = useState<Filter>("todo");
-  const visible = useMemo(
-    () =>
-      filter === "todo"
-        ? products
-        : products.filter((p) => p.category === filter),
-    [filter],
-  );
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const visibleProducts = useMemo(() => {
+    let filtered = filter === "todo"
+      ? products
+      : products.filter((p) => p.category === filter);
+      
+    if (!isExpanded) {
+      if (filter === "todo") {
+        // Mostrar máximo 6 productos en "Todo": hasta 3 relojes y completar con joyas
+        const watches = products.filter((p) => p.category === "relojes");
+        const jewelry = products.filter((p) => p.category === "joyas");
+        
+        const selectedWatches = watches.slice(0, 3);
+        const selectedJewelry = jewelry.slice(0, 6 - selectedWatches.length);
+        
+        filtered = [...selectedWatches, ...selectedJewelry];
+      } else {
+        filtered = filtered.slice(0, 6);
+      }
+    }
+    
+    return filtered;
+  }, [filter, isExpanded]);
+
+  const hasMore = useMemo(() => {
+    const total = filter === "todo" 
+      ? products.length 
+      : products.filter((p) => p.category === filter).length;
+    return total > visibleProducts.length;
+  }, [filter, visibleProducts.length]);
+
+  const handleFilterChange = (newFilter: Filter) => {
+    setFilter(newFilter);
+    setIsExpanded(false);
+  };
 
   return (
-    <section id="catalogo" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+    <section id="catalogo" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +73,7 @@ export function Catalog() {
           {tabs.map((t) => (
             <button
               key={t.id}
-              onClick={() => setFilter(t.id)}
+              onClick={() => handleFilterChange(t.id)}
               aria-pressed={filter === t.id}
               className={`relative rounded-full px-5 py-2.5 text-xs tracking-[0.18em] uppercase transition-colors duration-300 sm:px-7 ${
                 filter === t.id
@@ -67,14 +96,31 @@ export function Catalog() {
 
       <motion.div
         layout
-        className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6"
       >
         <AnimatePresence mode="popLayout">
-          {visible.map((p) => (
+          {visibleProducts.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {hasMore && (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="mt-12 flex justify-center"
+        >
+          <button
+            onClick={() => setIsExpanded(true)}
+            className="group relative overflow-hidden rounded-full border border-gold/40 bg-transparent px-8 py-3 text-sm tracking-widest text-foreground transition-all duration-300 hover:border-gold hover:text-gold"
+          >
+            <span className="relative z-10 uppercase text-xs">Cargar más modelos</span>
+            <div className="absolute inset-0 -z-0 bg-gold/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </button>
+        </motion.div>
+      )}
     </section>
   );
 }

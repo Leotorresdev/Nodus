@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Eye } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import type { Product } from "@/data/products";
 import { WHATSAPP_NUMBER } from "@/lib/site";
 
 export function ProductCard({ product }: { product: Product }) {
   const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola NODUS, quiero más información sobre ${product.name} (${product.price}).`,
+    `Hola NODUS, quiero comprar el producto ${product.name} (${product.price}).`
   )}`;
 
   return (
@@ -19,9 +19,9 @@ export function ProductCard({ product }: { product: Product }) {
       exit={{ opacity: 0, y: -12, scale: 0.98 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -8 }}
-      className="group shadow-card relative overflow-hidden rounded-2xl border border-border bg-card"
+      className="group shadow-card relative overflow-hidden rounded-2xl border border-border bg-card flex flex-col"
     >
-      <div className="relative aspect-4/5 overflow-hidden bg-secondary">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-secondary">
         <Image
           src={product.image}
           alt={product.name}
@@ -35,9 +35,9 @@ export function ProductCard({ product }: { product: Product }) {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute inset-x-4 bottom-4 inline-flex translate-y-4 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background/70 py-3 text-xs tracking-[0.2em] text-gold uppercase opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"
+          className="absolute inset-x-4 bottom-4 inline-flex translate-y-4 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background/70 py-3 text-xs tracking-[0.2em] text-gold uppercase opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-gold hover:text-black"
         >
-          <Eye size={14} /> Ver más
+          <ShoppingBag size={14} /> Comprar ahora
         </a>
       </div>
 
@@ -50,9 +50,11 @@ export function ProductCard({ product }: { product: Product }) {
             {product.detail}
           </p>
         </div>
-        <span className="text-gold-gradient shrink-0 text-lg font-semibold">
-          {product.price}
-        </span>
+        <div className="flex flex-col items-end shrink-0 justify-center">
+          <span className="text-gold-gradient text-lg font-semibold">
+            {product.price}
+          </span>
+        </div>
       </div>
     </motion.article>
   );
