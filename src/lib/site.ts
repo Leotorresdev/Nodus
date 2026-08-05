@@ -5,7 +5,7 @@
 export const WHATSAPP_NUMBER = "584149712020";
 
 export const WHATSAPP_MESSAGE =
-  "Hola NODUS, me interesa recibir asesoría sobre sus relojes y joyas.";
+  "¡Hola, NODUS! 👋 Me gustaría recibir asesoría personalizada para elegir un reloj o joya que se adapte a mi estilo.";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE,

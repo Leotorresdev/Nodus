@@ -8,7 +8,7 @@ import { WHATSAPP_NUMBER } from "@/lib/site";
 
 export function ProductCard({ product }: { product: Product }) {
   const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola NODUS, quiero comprar el producto ${product.name}${product.price ? ` (${product.price})` : ''}.`
+    `¡Hola, NODUS! 👋 Me encantaría adquirir la pieza ${product.name}${product.price ? ` (${product.price})` : ''}. ¿Me podrían brindar más información para concretar mi compra? ✨`
   )}`;
 
   return (
