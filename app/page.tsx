@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { Hero } from "@/components/sections/hero";
 import { Catalog } from "@/components/sections/catalog";
+import { About } from "@/components/sections/about";
 import { SupportSection } from "@/components/sections/support-section";
 
 export default function Home() {
@@ -13,6 +14,8 @@ export default function Home() {
         <Hero />
         <div className="hairline" />
         <Catalog />
+        <div className="hairline" />
+        <About />
         <SupportSection />
       </main>
       <Footer />

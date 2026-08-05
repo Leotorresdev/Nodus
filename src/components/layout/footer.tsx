@@ -6,6 +6,7 @@ import { INSTAGRAM_URL, WHATSAPP_URL, SITE } from "@/lib/site";
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Catálogo", href: "#catalogo" },
+  { label: "Sobre Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ] as const;
 
