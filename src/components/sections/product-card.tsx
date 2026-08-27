@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
@@ -7,6 +8,8 @@ import type { Product } from "@/data/products";
 import { WHATSAPP_NUMBER } from "@/lib/site";
 
 export function ProductCard({ product }: { product: Product }) {
+  const [currentImage, setCurrentImage] = useState(product.image);
+
   const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     `¡Hola, NODUS! 👋 Me encantaría adquirir la pieza ${product.name}${product.price ? ` (${product.price})` : ''}. ¿Me podrían brindar más información para concretar mi compra? ✨`
   )}`;
@@ -27,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-secondary">
         <Image
-          src={product.image}
+          src={currentImage}
           alt={product.name}
           loading="lazy"
           width={900}
@@ -48,6 +51,24 @@ export function ProductCard({ product }: { product: Product }) {
             <h3 className="line-clamp-2 text-sm sm:text-lg font-medium text-foreground tracking-wide leading-snug">
               {product.name}
             </h3>
+            
+            {product.colorVariants && product.colorVariants.length > 0 && (
+              <div className="mt-2.5 flex items-center gap-2">
+                {product.colorVariants.map((variant, i) => (
+                  <button
+                    key={i}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentImage(variant.image);
+                    }}
+                    className={`w-5 h-5 rounded-full border-2 transition-transform ${currentImage === variant.image ? 'border-gold scale-125' : 'border-gray-500 hover:border-gray-300'}`}
+                    style={{ backgroundColor: variant.colorCode }}
+                    title={variant.colorName}
+                  />
+                ))}
+              </div>
+            )}
+
             {product.variants && product.variants.length > 0 && (
               <div className="mt-2.5 flex flex-col gap-1.5">
                 {product.variants.map((variant, i) => (
