@@ -53,7 +53,7 @@ export function ProductCard({ product }: { product: Product }) {
             </h3>
             
             {product.colorVariants && product.colorVariants.length > 0 && (
-              <div className="mt-2.5 flex items-center gap-2">
+              <div className="mt-2.5 flex flex-wrap items-center gap-2">
                 {product.colorVariants.map((variant, i) => (
                   <button
                     key={i}
@@ -61,7 +61,7 @@ export function ProductCard({ product }: { product: Product }) {
                       e.preventDefault();
                       setCurrentImage(variant.image);
                     }}
-                    className={`w-5 h-5 rounded-full border-2 transition-transform ${currentImage === variant.image ? 'border-gold scale-125' : 'border-gray-500 hover:border-gray-300'}`}
+                    className={`w-5 h-5 shrink-0 rounded-full border-2 transition-transform ${currentImage === variant.image ? 'border-gold scale-125' : 'border-gray-500 hover:border-gray-300'}`}
                     style={{ backgroundColor: variant.colorCode }}
                     title={variant.colorName}
                   />
