@@ -1,6 +1,6 @@
 import { PRODUCT_IMAGES } from "@/lib/images";
 
-export type Category = "relojes" | "joyas";
+export type Category = "relojes" | "relojes-dama" | "joyas";
 
 export type Product = {
   id: string;
@@ -13,6 +13,263 @@ export type Product = {
 };
 
 export const products: Product[] = [
+  { 
+    id: "reloj-curren-9079", 
+    name: "Curren 9079", 
+    price: "$29.00", 
+    image: "/curren-9079.jpg", 
+    category: "relojes-dama",
+    colorVariants: []
+  },
+  { 
+    id: "reloj-curren-9072", 
+    name: "Curren 9072", 
+    price: "$32.00", 
+    image: "/curren-9072.jpg", 
+    category: "relojes-dama",
+    colorVariants: [
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-9072.jpg" },
+      { colorName: "Rosado", colorCode: "#FFC0CB", image: "/curren-9072-pink.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-9093", 
+    name: "Curren 9093", 
+    price: "$29.00", 
+    image: "/curren-9093.jpg", 
+    category: "relojes-dama",
+    colorVariants: []
+  },
+  { 
+    id: "reloj-curren-9067-gold", 
+    name: "Curren 9067", 
+    price: "$29.00", 
+    image: "/curren-9067-gold.jpg", 
+    category: "relojes-dama",
+    colorVariants: [
+      { colorName: "Dorado", colorCode: "#D4AF37", image: "/curren-9067-gold.jpg" },
+      { colorName: "Oro Rosa", colorCode: "#B76E79", image: "/curren-9067-gold-pink.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-9024-black", 
+    name: "Curren 9024 Black", 
+    price: "$29.00", 
+    image: "/curren-9024-black.jpg", 
+    category: "relojes-dama",
+    colorVariants: [
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-9024-black.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-9051", 
+    name: "Curren 9051", 
+    price: "$29.00", 
+    image: "/curren-9051.jpg", 
+    category: "relojes-dama",
+    colorVariants: [
+      { colorName: "Dorado", colorCode: "#D4AF37", image: "/curren-9051.jpg" },
+      { colorName: "Rosado", colorCode: "#FFC0CB", image: "/curren-9051-pink.jpg" },
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/curren-9051-blue.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-8462", 
+    name: "Curren 8462", 
+    price: "$39.00", 
+    image: "/curren-8462-green.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Verde", colorCode: "#008000", image: "/curren-8462-green.jpg" },
+      { colorName: "Gris", colorCode: "#808080", image: "/curren-8462-grey.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-8464", 
+    name: "Curren 8464", 
+    price: "$39.00", 
+    image: "/curren-8464-white.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/curren-8464-white.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-8464-black.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-8461", 
+    name: "Curren 8461", 
+    price: "$39.00", 
+    image: "/curren-8461-black.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-8461-black.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/curren-8461-green.jpg" },
+      { colorName: "Gris", colorCode: "#808080", image: "/curren-8461-gray.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-8467", 
+    name: "Curren 8467", 
+    price: "$34.00", 
+    image: "/curren-8467-blue.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/curren-8467-blue.jpg" },
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/curren-8467-white.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-8467-black.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/curren-8467-green.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-skmei-2423", 
+    name: "Skmei 2423", 
+    price: "$39.00", 
+    image: "/skmei-2423-gold.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Dorado", colorCode: "#D4AF37", image: "/skmei-2423-gold.jpg" },
+      { colorName: "Plateado", colorCode: "#C0C0C0", image: "/skmei-2423-silver.jpg" },
+      { colorName: "Plateado-Blanco", colorCode: "#F5F5F5", image: "/skmei-2423-silver-white.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-skmei-2222", 
+    name: "Skmei 2222", 
+    price: "$27.00", 
+    image: "/skmei-2222.jpg", 
+    category: "relojes",
+    colorVariants: []
+  },
+  { 
+    id: "reloj-chenxi-949", 
+    name: "Chenxi 949", 
+    price: "$39.00", 
+    image: "/chenxi-949.jpg", 
+    category: "relojes",
+    colorVariants: []
+  },
+  { 
+    id: "reloj-curren-8465", 
+    name: "Curren 8465", 
+    price: "$32.00", 
+    image: "/curren-8465-blue.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/curren-8465-blue.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/curren-8465-green.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/curren-8465-black.jpg" },
+      { colorName: "Gris", colorCode: "#808080", image: "/curren-8465-grey.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-curren-8472", 
+    name: "Curren 8472", 
+    price: "$32.00", 
+    image: "/curren-8472-blue.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/curren-8472-blue.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/curren-8472-green.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-skmei-1990", 
+    name: "Skmei 1990", 
+    price: "$39.00", 
+    image: "/skmei-1990.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Plateado", colorCode: "#C0C0C0", image: "/skmei-1990.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/skmei-1990-2.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-skmei-2382", 
+    name: "Skmei 2382", 
+    price: "$24.80", 
+    image: "/skmei-2382-black.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Negro", colorCode: "#000000", image: "/skmei-2382-black.jpg" },
+      { colorName: "Dorado", colorCode: "#D4AF37", image: "/skmei-2382-gold.jpg" },
+      { colorName: "Plateado", colorCode: "#C0C0C0", image: "/skmei-2382-silver.jpg" },
+      { colorName: "Militar", colorCode: "#556B2F", image: "/skmei-2382-military.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-megir-8601", 
+    name: "Megir 8601", 
+    price: "$45.00", 
+    image: "/megir-8601-green.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Verde", colorCode: "#008000", image: "/megir-8601-green.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/megir-8601-black.jpg" },
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/megir-8601-blue.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-megir-2220", 
+    name: "Megir 2220", 
+    price: "$39.00", 
+    image: "/megir-2220-blue.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/megir-2220-blue.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/megir-2220-black.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-poedagar-926", 
+    name: "Poedagar 926", 
+    price: "$39.00", 
+    image: "/poedagar-926-black.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Negro", colorCode: "#000000", image: "/poedagar-926-black.jpg" },
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/poedagar-926-white.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-poedagar-825-3480", 
+    name: "Poedagar 825", 
+    price: "$34.80", 
+    image: "/poedagar-825-white.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/poedagar-825-white.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/poedagar-825-green.jpg" },
+      { colorName: "Dorado/Blanco", colorCode: "#D4AF37", image: "/poedagar-825-gold-white-new.jpg" },
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/poedagar-825-blue.jpg" },
+      { colorName: "Dorado/Negro", colorCode: "#000000", image: "/poedagar-825-gold-black.jpg" },
+      { colorName: "Negro", colorCode: "#222222", image: "/poedagar-825-black-new.jpg" },
+      { colorName: "Dorado", colorCode: "#D4AF37", image: "/poedagar-825-gold.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-poedagar-930", 
+    name: "Poedagar 930", 
+    price: "$28.80", 
+    image: "/poedagar-930-white.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/poedagar-930-white.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/poedagar-930-green.jpg" }
+    ]
+  },
+  { 
+    id: "reloj-nibosi-2628", 
+    name: "Nibosi 2628", 
+    price: "$39.00", 
+    image: "/nibosi-2628-blue.jpg", 
+    category: "relojes",
+    colorVariants: [
+      { colorName: "Azul", colorCode: "#1E3A8A", image: "/nibosi-2628-blue.jpg" },
+      { colorName: "Blanco", colorCode: "#FFFFFF", image: "/nibosi-2628-white.jpg" },
+      { colorName: "Verde", colorCode: "#008000", image: "/nibosi-2628-green.jpg" },
+      { colorName: "Negro", colorCode: "#000000", image: "/nibosi-2628-black.jpg" }
+    ]
+  },
   { 
     id: "reloj-curren-8388", 
     name: "Curren 8388", 

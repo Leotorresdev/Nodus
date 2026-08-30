@@ -9,7 +9,8 @@ type Filter = "todo" | Category;
 
 const tabs: { id: Filter; label: string }[] = [
   { id: "todo", label: "Todo" },
-  { id: "relojes", label: "Relojes" },
+  { id: "relojes", label: "Relojes Caballero" },
+  { id: "relojes-dama", label: "Relojes Dama" },
   { id: "joyas", label: "Joyas" },
 ];
 
@@ -24,14 +25,16 @@ export function Catalog() {
       
     if (!isExpanded) {
       if (filter === "todo") {
-        // Mostrar máximo 6 productos en "Todo": hasta 3 relojes y completar con joyas
+        // Mostrar máximo 6 productos en "Todo" equilibrados
         const watches = products.filter((p) => p.category === "relojes");
+        const damas = products.filter((p) => p.category === "relojes-dama");
         const jewelry = products.filter((p) => p.category === "joyas");
         
-        const selectedWatches = watches.slice(0, 3);
-        const selectedJewelry = jewelry.slice(0, 6 - selectedWatches.length);
+        const selectedWatches = watches.slice(0, 2);
+        const selectedDamas = damas.slice(0, 2);
+        const selectedJewelry = jewelry.slice(0, 6 - selectedWatches.length - selectedDamas.length);
         
-        filtered = [...selectedWatches, ...selectedJewelry];
+        filtered = [...selectedWatches, ...selectedDamas, ...selectedJewelry];
       } else {
         filtered = filtered.slice(0, 6);
       }
